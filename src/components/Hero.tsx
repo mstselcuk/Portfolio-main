@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Sun, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import hero from "./pictures/commercial-solar-power-plant--an-engineer-who-is-m.png";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -12,7 +13,7 @@ export function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="\commercial-solar-power-plant--an-engineer-who-is-m.png"
+          src={hero}
           alt="Solar panels installation"
           className="w-full h-full object-cover"
         />
