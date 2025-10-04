@@ -23,8 +23,8 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "engineer@solardesign.com",
-      href: "mailto:engineer@solardesign.com",
+      value: "mesut.selcuk45@gmail.com",
+      href: "mailto:mesut.selcuk45@gmail.com",
     },
     {
       icon: Phone,
