@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner"; // "sonner@2.0.3" yerine genelde böyle import edilir
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -29,13 +29,13 @@ export function Contact() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+61 424 232 299",
+      href: "tel:+61424232299",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Melbourne, VIC",
       href: null,
     },
   ];
@@ -88,8 +88,11 @@ export function Contact() {
                   <a
                     key={index}
                     href={social.href}
-                    className="p-3 bg-white rounded-lg hover:bg-yellow-100 transition-colors border cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
+                    title={social.label}
+                    className="p-3 bg-white rounded-lg hover:bg-yellow-100 transition-colors border cursor-pointer"
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -140,7 +143,10 @@ export function Contact() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full bg-yellow-500 hover:bg-yellow-600 text-black cursor-pointer">
+                <Button
+                  type="submit"
+                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-black cursor-pointer"
+                >
                   Send Message
                 </Button>
               </form>
