@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="\pictures\commercial-solar-power-plant--an-engineer-who-is-m.png"
+          src="\commercial-solar-power-plant--an-engineer-who-is-m.png"
           alt="Solar panels installation"
           className="w-full h-full object-cover"
         />
