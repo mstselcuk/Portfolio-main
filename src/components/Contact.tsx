@@ -4,7 +4,8 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner"; // "sonner@2.0.3" yerine genelde böyle import edilir
+import { toast } from "sonner";
+import emailjs from "emailjs-com";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -15,8 +16,26 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+
+    // EmailJS bilgilerini kendi panelinden alacaksın
+    emailjs
+      .send(
+        "service_mstselcuk",   // 🔹 EmailJS'deki SERVICE ID
+        "template_2x1qil8",  // 🔹 TEMPLATE ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "EHXZGNtk4WrrgHA79"     // 🔹 PUBLIC KEY (EmailJS dashboard > Account)
+      )
+      .then(() => {
+        toast.success("Message sent successfully! 🚀");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Please try again later.");
+      });
   };
 
   const contactInfo = [
@@ -56,6 +75,7 @@ export function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+          {/* ----------- LEFT SIDE ----------- */}
           <div>
             <h3 className="text-2xl mb-6">Contact Information</h3>
             <div className="space-y-4 mb-8">
@@ -101,6 +121,7 @@ export function Contact() {
             </div>
           </div>
 
+          {/* ----------- RIGHT SIDE (FORM) ----------- */}
           <Card>
             <CardContent className="pt-6">
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -113,7 +134,9 @@ export function Contact() {
                     type="text"
                     placeholder="Your name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -126,7 +149,9 @@ export function Contact() {
                     type="email"
                     placeholder="your.email@example.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -139,7 +164,9 @@ export function Contact() {
                     placeholder="Tell me about your solar project..."
                     rows={5}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
                   />
                 </div>

@@ -1,22 +1,22 @@
-import { Award, Target, Users } from "lucide-react";
+import { Award, BellElectric, Target, Users, ZapIcon } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
 export function About() {
   const highlights = [
     {
       icon: Award,
-      title: "10+ Years Experience",
-      description: "Delivering innovative solar solutions across residential and commercial sectors",
-    },
-    {
-      icon: Target,
-      title: "100+ Projects",
-      description: "Successfully designed and implemented solar systems generating over 50MW",
+      title: "3+ Years Experience",
+      description: "Designing and delivering solar systems across residential and commercial projects",
     },
     {
       icon: Users,
-      title: "Client Focused",
-      description: "Committed to sustainable solutions that exceed client expectations",
+      title: "50+ Projects",
+      description: "Client-Focused Solar Solutions",
+    },
+    {
+      icon: ZapIcon,
+      title: "40+ MW",
+      description: "Mainly Focused on Commercial Rooftop Solar Projects",
     },
   ];
 
@@ -26,8 +26,8 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            As a certified Solar Design Engineer, I specialize in creating efficient, 
-            cost-effective photovoltaic systems that harness the power of the sun. 
+            As a certified Solar Design Engineer, I specialize in creating efficient,
+            cost-effective photovoltaic systems that harness the power of the sun.
             My expertise spans from initial site assessment to final system optimization.
           </p>
         </div>
