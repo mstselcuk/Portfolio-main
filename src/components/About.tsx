@@ -28,6 +28,7 @@ export function About() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             I’m a passionate Solar Design Engineer with a strong focus on delivering high-performance and sustainable energy solutions.
             Over the past few years, I’ve been involved in designing and optimizing solar systems across residential, commercial, and utility-scale projects.
+            <br></br>
             My goal is to create efficient designs that not only meet technical standards but also make solar energy more accessible and reliable for everyone.
             Now based in Melbourne, I’m continuing to expand my expertise in renewable technologies and support the transition toward a cleaner, smarter energy future.
           </p>
