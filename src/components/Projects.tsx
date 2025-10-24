@@ -199,9 +199,10 @@ export function Projects() {
     <section id="projects" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl mb-4">Featured Projects</h2>
+          <h2 className="text-4xl mb-4">Selected Solar Projects</h2>
           <p className="text-xl text-gray-600">
-            A selection of solar installations showcasing innovation and efficiency
+            A selection of solar power systems I’ve contributed to — <br></br>
+            showcasing key designs and installations from my professional portfolio.
           </p>
         </div>
 
@@ -361,6 +362,11 @@ export function Projects() {
               />
             ))}
           </div>
+          <br></br>
+          {/* 💡 Info text */}
+          <p className="text-center text-m text-gray-500 italic mt-2">
+            💡 Click the center card to explore the reference project on the partner company’s website.
+          </p>
         </div>
       </div>
     </section>
