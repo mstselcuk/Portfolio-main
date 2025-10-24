@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Zap, Home, Building2, ChevronLeft, ChevronRight, Building, Factory } from "lucide-react";
+import { Zap, Home, Building2, ChevronLeft, ChevronRight, Building, Factory, Filter } from "lucide-react";
 import { useState } from "react";
 
 export function Projects() {
@@ -9,8 +9,8 @@ export function Projects() {
 
   const projects = [
     {
-      title: "Dinamik Isi Pv System",
-      description: "Design and Legal Process - Dinamik Isi Makine Yalitim Malz. San. Ve Tic. A.S",
+      title: "Dynamic Heat Pv System",
+      description: "Design and Legal Process - Dynamic Heat (Client name censored to protect confidentiality.)",
       image: "https://r.resimlink.com/W4Xh_xK91ufU.webp",
       capacity: "4,553.64 kWp",
       type: "Commercial",
@@ -40,7 +40,7 @@ export function Projects() {
     },
     {
       title: "Meditera Pv System",
-      description: "Design and Legal Process - Meditera Tibbi Malz. San. Ve Tic. A.S.",
+      description: "Design and Legal Process - Meditera (Client name censored to protect confidentiality.)",
       image: "https://r.resimlink.com/B_Ffg.webp",
       capacity: "2,389.00 kWp",
       type: "Commercial",
@@ -108,6 +108,12 @@ export function Projects() {
       icon: Factory,
       tags: ["Arden Solar Energy", "On-Grid", "Rooftop"],
     },
+  ];
+
+  // Aktifken blur uygulanacak projelerin başlık listesi (istediğini ekleyip çıkar)
+  const blurredProjects = [
+    "Dynamic Heat Pv System",
+    "Meditera Pv System",
   ];
 
   const handlePrevious = () => {
@@ -213,6 +219,9 @@ export function Projects() {
                 const style = getCardStyle(index);
                 const isActive = index === activeIndex;
 
+                // aktif + listede ise blur/etiket
+                const shouldBlur = isActive && blurredProjects.includes(project.title);
+
                 return (
                   <div
                     key={index}
@@ -234,15 +243,39 @@ export function Projects() {
                   >
                     <Card className={`overflow-hidden ${isActive ? "w-[420px]" : "w-[380px]"} shadow-2xl`}>
                       <div className="relative h-64 overflow-hidden">
-                        <ImageWithFallback
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full">
+                        {/* Görsel */}
+                        <div
+                          className="w-full h-full"
+                          style={{ filter: shouldBlur ? "blur(4px)" : undefined }}
+                        >
+                          <ImageWithFallback
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        {/* Alt yazı şeriti (yalnızca aktif + listedekiler) */}
+                        {shouldBlur && (
+                          <div
+                            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                            style={{ zIndex: 10 }}
+                          >
+                            <div className="w-full bg-black/60 text-yellow-400 text-[12px] text-center py-3">
+                              Visual content blurred to protect client data.
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Kapasite rozeti */}
+                        <div
+                          className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full"
+                          style={{ zIndex: 20 }}
+                        >
                           {project.capacity}
                         </div>
                       </div>
+
                       {isActive ? (
                         <>
                           <CardHeader>
