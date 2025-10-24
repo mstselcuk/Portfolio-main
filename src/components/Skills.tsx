@@ -1,11 +1,11 @@
 import { Card, CardContent } from "./ui/card";
-import { 
-  Lightbulb, 
-  FileText, 
-  Wrench, 
-  LineChart, 
-  Shield, 
-  Laptop 
+import {
+  Lightbulb,
+  FileText,
+  Wrench,
+  LineChart,
+  Shield,
+  Laptop
 } from "lucide-react";
 
 export function Skills() {
@@ -13,32 +13,32 @@ export function Skills() {
     {
       icon: Lightbulb,
       title: "System Design",
-      items: ["PV Array Configuration", "Energy Modeling", "Shading Analysis", "Load Calculations"],
+      items: ["Rooftop Solar Systems", "Ground-Mounted Solar Power Plants", "PV Array Configuration", "Inverter Room Design"],
     },
     {
       icon: FileText,
       title: "Engineering & Planning",
-      items: ["AutoCAD/SolidWorks", "Structural Analysis", "Permitting", "Code Compliance"],
+      items: ["Project Management", "Budget Management", "Permitting", "Time Management"],
     },
     {
       icon: Wrench,
       title: "Technical Expertise",
-      items: ["Inverter Selection", "Battery Systems", "Grid Integration", "MPPT Optimization"],
+      items: ["PV Selection", "Inverter Selection", "Grid Integration", "MPPT Optimization"],
     },
     {
       icon: LineChart,
       title: "Performance Analysis",
-      items: ["PVsyst", "Helioscope", "Energy Yield Prediction", "ROI Analysis"],
+      items: ["Energy Production Analysis", "Shading Analysis", "Inverter Load Analysis"],
     },
     {
       icon: Shield,
       title: "Standards & Safety",
-      items: ["NEC Compliance", "IEEE Standards", "Safety Protocols", "Quality Assurance"],
+      items: ["IP Ratings", "IEEE Standards", "Safety Protocols"],
     },
     {
       icon: Laptop,
       title: "Software Proficiency",
-      items: ["MATLAB", "Python", "SAM", "SketchUp"],
+      items: ["AutoCad", "PVsol", "PVsyst", "Solidworks", "SketchUp"],
     },
   ];
 
