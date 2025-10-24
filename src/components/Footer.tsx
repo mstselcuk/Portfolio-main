@@ -7,10 +7,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Sun className="w-6 h-6 text-yellow-400" />
-            <span className="font-medium">Solar Design Engineer</span>
+            <span className="font-medium">Solar Project Engineer</span>
           </div>
           <p className="text-gray-400">
-            © 2025 Solar Design Engineer. Powering a sustainable future.
+            © 2025 Solar Project Engineer. Powering a sustainable future.
           </p>
         </div>
       </div>

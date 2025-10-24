@@ -29,19 +29,17 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <button
           onClick={() => scrollToSection("hero")}
-          className={`flex items-center gap-2 transition-colors cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
-          }`}
+          className={`flex items-center gap-2 transition-colors cursor-pointer ${isScrolled ? "text-black" : "text-white"
+            }`}
         >
           <Sun className="w-6 h-6" />
-          <span className="font-medium">Solar Engineer</span>
+          <span className="font-medium">Solar Project Engineer</span>
         </button>
 
         {/* Desktop Navigation */}
@@ -50,9 +48,8 @@ export function Navigation() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`transition-colors hover:text-yellow-500 cursor-pointer ${
-                isScrolled ? "text-black" : "text-white"
-              }`}
+              className={`transition-colors hover:text-yellow-500 cursor-pointer ${isScrolled ? "text-black" : "text-white"
+                }`}
             >
               {link.label}
             </button>

@@ -28,7 +28,7 @@ export function Hero() {
           Mesut Selcuk
         </h1>
         <h2 className="text-1xl md:text-3xl font-semibold text-gray-100">
-          Solar Design Engineer
+          Solar Project Engineer
         </h2>
         <br></br>
         <p className="mt-2 text-lg md:text-xl mb-8 text-gray-300">

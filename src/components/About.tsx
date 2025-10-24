@@ -26,7 +26,7 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I’m a passionate Solar Design Engineer with a strong focus on delivering high-performance and sustainable energy solutions.
+            I’m a passionate Solar Project Engineer with a strong focus on delivering high-performance and sustainable energy solutions.
             Over the past few years, I’ve been involved in designing and optimizing solar systems across residential, commercial, and utility-scale projects.
             <br></br>
             <br></br>
