@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Zap, Home, Building2, ChevronLeft, ChevronRight, Building, Factory, Filter } from "lucide-react";
+import { Zap, Home, Building2, ChevronLeft, ChevronRight, Building, Factory, Filter, LinkedinIcon } from "lucide-react";
 import { useState } from "react";
 
 export function Projects() {
@@ -17,6 +17,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Igciler Pv System Fase 1-2",
@@ -27,6 +28,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Semsioglu Mobilya Pv System Fase 1-2",
@@ -37,6 +39,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Meditera Pv System",
@@ -47,6 +50,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Turkuaz Kablo Pv System",
@@ -57,6 +61,7 @@ export function Projects() {
       location: "Kocaeli, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Ata Reduktor Pv System",
@@ -67,6 +72,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Conseco Energy", "On-Grid", "Rooftop"],
+      link: "https://www.conseco.com.tr/Home/Referances",
     },
     {
       title: "Irak Plastik Pv System",
@@ -77,6 +83,7 @@ export function Projects() {
       location: "Izmir, Turkiye",
       icon: Factory,
       tags: ["Arden Solar Energy", "On-Grid", "Rooftop"],
+      link: "https://ardenenerji.com/referanslar/",
     },
     {
       title: "Öz Özbulutlar Pv System",
@@ -87,6 +94,7 @@ export function Projects() {
       location: "Yozgat, Turkiye",
       icon: Factory,
       tags: ["Arden Solar Energy", "On-Grid", "Rooftop"],
+      link: "https://ardenenerji.com/referanslar/",
     },
     {
       title: "Huntas Pv System",
@@ -97,6 +105,7 @@ export function Projects() {
       location: "Balikesir, Turkiye",
       icon: Factory,
       tags: ["Arden Solar Energy", "On-Grid", "Rooftop"],
+      link: "https://ardenenerji.com/referanslar/",
     },
     {
       title: "Bildikler Pv System",
@@ -107,6 +116,7 @@ export function Projects() {
       location: "Yozgat, Turkiye",
       icon: Factory,
       tags: ["Arden Solar Energy", "On-Grid", "Rooftop"],
+      link: "https://ardenenerji.com/referanslar/",
     },
   ];
 
@@ -239,7 +249,11 @@ export function Projects() {
                       backfaceVisibility: "hidden",
                       transformStyle: "preserve-3d",
                     }}
-                    onClick={() => setActiveIndex(index)}
+
+                    onClick={() => {
+                      if (isActive && project.link) window.open(project.link, "_blank");
+                      else setActiveIndex(index);
+                    }}
                   >
                     <Card className={`overflow-hidden ${isActive ? "w-[420px]" : "w-[380px]"} shadow-2xl`}>
                       <div className="relative h-64 overflow-hidden">
